@@ -36,17 +36,17 @@ int ft_printf(const char *string, ...)
 int	print_format(char c, va_list var)
 {
 	if (c == 'c')
-		return (ft_putchar(va_arg(var, int)));
+		return ();
 	if (c == 's')
-		return (ft_putstr(va_arg(var, char *)));
+		return ();
 	if (c == 'd' || c == 'i')
-		return (ft_putnbr(va_arg(var, int)));
+		return ();
 	if (c == 'u')
-		return (ft_putunsigned(va_arg(var, unsigned int)));
+		return ();
 	if (c == 'x' || c == 'X')
-		return (ft_puthex(va_arg(var, unsigned int), c));
+		return ();
 	if (c == 'p')
-		return (ft_putptr((unsigned long long)va_arg(var, void *)));
+		return ();
 	if (c == '%')
 		return (write(1, "%", 1));
 	return (0);
