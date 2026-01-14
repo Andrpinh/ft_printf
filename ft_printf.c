@@ -36,7 +36,7 @@ int ft_printf(const char *string, ...)
 int	print_format(char c, va_list var)
 {
 	if (c == 'c')
-		return (ft_putchar(va_arg(var, int)));
+		return ();
 	if (c == 's')
 		return ();
 	if (c == 'd' || c == 'i')
