@@ -11,6 +11,8 @@
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <stdarg.h>
+#include <unistd.h>
 
 int ft_printf(const char *string, ...)
 {
@@ -32,21 +34,25 @@ int ft_printf(const char *string, ...)
 		
 	}
 	va_end(var);
+	return(count);
 }
+
 int	print_format(char c, va_list var)
 {
 	if (c == 'c')
 		return (ft_putchar(va_arg(var, int)));
 	if (c == 's')
-		return ();
+		return (ft_putstr(va_arg(var, char *)));
 	if (c == 'd' || c == 'i')
-		return ();
+		return (ft_putnbr(va_arg(var, int)));
 	if (c == 'u')
-		return ();
-	if (c == 'x' || c == 'X')
-		return ();
+		return (ft_putunbr(va_arg(var, unsigned int)));
+	if (c == 'x')
+		return (ft_puthex(va_arg(var, unsigned int), 0));
+	if (c == 'X')
+		return (ft_puthex(va_arg(var, unsigned int), 1));
 	if (c == 'p')
-		return ();
+		return (ft_putptr(va_arg(var, void *)));
 	if (c == '%')
 		return (write(1, "%", 1));
 	return (0);
