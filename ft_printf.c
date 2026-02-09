@@ -14,10 +14,12 @@
 #include <stdarg.h>
 #include <unistd.h>
 
-int ft_printf(const char *string, ...)
+int	print_format(char c, va_list var);
+
+int	ft_printf(const char *string, ...)
 {
-	va_list var;
-	int	count;
+	va_list	var;
+	int		count;
 
 	va_start(var, string);
 	count = 0;
@@ -25,16 +27,15 @@ int ft_printf(const char *string, ...)
 	{
 		if (*string == '%')
 		{
-			string ++;
-			count += print_format(*string,var);
+			string++;
+			count += print_format(*string, var);
 		}
 		else
 			count += write(1, string, 1);
-		string ++;
-		
+		string++;
 	}
 	va_end(var);
-	return(count);
+	return (count);
 }
 
 int	print_format(char c, va_list var)
