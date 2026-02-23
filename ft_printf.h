@@ -6,16 +6,15 @@
 /*   By: andrpinh <andrpinh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 13:24:57 by andrpinh          #+#    #+#             */
-/*   Updated: 2025/12/08 14:01:40 by andrpinh         ###   ########.fr       */
+/*   Updated: 2026/02/23 18:20:12 by andrpinh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #ifndef FT_PRINTF_H
-#define FT_PRINTF_H
+# define FT_PRINTF_H
 
-#include <stdarg.h>
-#include <unistd.h>
+# include <stdarg.h>
+# include <unistd.h>
 
 int	ft_printf(const char *string, ...);
 int	print_format(char c, va_list var);
@@ -23,7 +22,7 @@ int	ft_putchar(char c);
 int	ft_putstr(char *s);
 int	ft_putnbr(int n);
 int	ft_putunbr(unsigned int n);
-int	ft_puthex(unsigned int n, int uppercase);
+int	ft_puthex(unsigned long n, int uppercase);
 int	ft_putptr(void *ptr);
 
 #endif

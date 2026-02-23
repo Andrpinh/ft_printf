@@ -6,15 +6,11 @@
 /*   By: andrpinh <andrpinh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 13:24:38 by andrpinh          #+#    #+#             */
-/*   Updated: 2025/12/08 14:08:46 by andrpinh         ###   ########.fr       */
+/*   Updated: 2026/02/23 18:21:01 by andrpinh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdarg.h>
-#include <unistd.h>
-
-int	print_format(char c, va_list var);
 
 int	ft_printf(const char *string, ...)
 {
@@ -25,7 +21,7 @@ int	ft_printf(const char *string, ...)
 	count = 0;
 	while (*string)
 	{
-		if (*string == '%')
+		if (*string == '%' && *(string + 1))
 		{
 			string++;
 			count += print_format(*string, var);
@@ -55,6 +51,6 @@ int	print_format(char c, va_list var)
 	if (c == 'p')
 		return (ft_putptr(va_arg(var, void *)));
 	if (c == '%')
-		return (write(1, "%", 1));
+		return (ft_putchar('%'));
 	return (0);
 }

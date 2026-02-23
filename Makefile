@@ -6,7 +6,7 @@ CFLAGS = -Wall -Wextra -Werror
 AR = ar rcs
 RM = rm -f
 
-SRC = ft_printf.c ft_printf_utils.c
+SRC = ft_printf.c ft_printf_utils.c ft_print_hex.c
 OBJ = $(SRC:.c=.o)
 
 # --------------------- Regras principais --------------------- #
